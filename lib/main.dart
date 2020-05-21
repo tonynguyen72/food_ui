@@ -2,6 +2,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'my_cart.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -130,12 +132,12 @@ class PizzaCard extends StatelessWidget {
     return Stack(
       children: <Widget>[
         GestureDetector(
-          // onTap: () => Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (_) => MyCart(),
-          //   ),
-          // ),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => MyCart(),
+            ),
+          ),
           child: Container(
             margin: EdgeInsets.fromLTRB(10.0, 5.0, 20.0, 5.0),
             height: 170.0,
