@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp_ui/pages/home_page.dart';
+
+import 'order_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -19,6 +22,8 @@ class _MainPageState extends State<MainPage> {
         currentIndex: _currentIndex,
         onTap: (index) {
           if (index == 1) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (ctx) => OrderPage()));
           } else {
             setState(() {
               _currentIndex = index;
@@ -45,7 +50,15 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
-      body: Container(),
+      body: getBodyWidget(),
     );
+  }
+
+  getBodyWidget() {
+    if (_currentIndex == 0) {
+      return HomePage();
+    } else {
+      return Container();
+    }
   }
 }
